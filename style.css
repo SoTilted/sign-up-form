@@ -62,10 +62,13 @@ table {
 }
 :root {
     font-family:Arial, Helvetica, sans-serif;
+    --error-color:rgba(254, 64, 64, 0.998);
 }
 
-
-
+body, .image-container, .logo-container, .form-container,
+form, .form, .form-row, .container{
+    display:flex;
+}
 
 em  {
     font-style: italic;
@@ -75,16 +78,13 @@ em  {
 }
 
 body {
-    display: flex;
     height: 100vh;
     width: 100vw;
     margin: 0;
-    background-color: rgb(245, 245, 245);
-   
+    background-color: rgb(245, 245, 245);  
 }
 
 .image-container {
-    display: flex;
     min-width: max(30vw,350px); /*thinking how to make it resize until breaking point*/
     background-image: url(images/background-image.avif);
     background-size: cover;
@@ -93,11 +93,9 @@ body {
     justify-content: center;
     align-items: end;
 
-    
 }
 
 .logo-container {
-    display: flex;
     color: white;
     font-family: 'Norse Bold';
     font-size: 6rem;
@@ -114,7 +112,8 @@ img {
     height: 150px;
 }
 .form-container {
-    
+    flex-direction: column;
+    align-items: center;
     min-height: max(40vh,1025px);
     min-width:max(70vw,0px);/*thinking how to make it resize until breaking point*/
     border: 2px solid black;
@@ -123,8 +122,8 @@ img {
 .form-container>.paragraph p{
     font-size: 1.5rem;
     font-weight: 650;
-    min-width: min(775px,70vw);
-    padding: 20px;
+    max-width: min(750px,55vw);
+    padding: 20px 20px 20px 0;
     margin-top:200px;
     margin-left: 35px;
 }
@@ -135,33 +134,83 @@ a,.image-container p {
 }
 
 form{ 
-    display: flex;
-    padding: 40px;
-    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
-    background-color: white;
     flex-direction: column;
 }
 
 legend {
-    padding: 15px;
+   margin-bottom: 30px;
     font-size: 2rem;
 }
 
-
-p {
-    padding: 15px;
-    font-size: 0.7rem;
-    width: 235px;
-}
-
 .container {
-    display: flex;
-
+    align-items: center;
+    padding: 40px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    flex-direction: column;
+    
 }
 
+.form-row {
+    margin-bottom: 30px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-width: 20vw;
+    font-size:0.78rem;
+    font-weight: 600;
+    color: rgb(85, 85, 85);
+}
+.form {
+    
+    justify-content: center;
+    flex-direction: column;
+}
+.form-col-1 {
+    display: flex;
+    gap: 100px;
+}
 input {
     border: solid #E5E7EB;
     border-radius: 4px;
+    max-width: 22vw;
+    padding: 8px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+input:focus {
+    
+    outline: none;
+    border:solid 1px rgb(0, 128, 255);
+    box-shadow:4px 4px 1px rgba(0, 0, 0, 0.1);
+
+}
+
+button[type='submit'] {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(245, 245, 245);
+    background-color: #596D48;
+    border-radius: 8px;
+}
+button[type='submit']:hover {
+    background-color: #404f33;
+}
+
+.error,.error:focus {
+    border:solid 1px var(--error-color);
+}
+.error-text{
+    color: var(--error-color);
+}
+
+#Log-in {
+    color:  #596D48;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 @media all and (max-width:670px)  {
@@ -170,31 +219,10 @@ input {
         align-items: center;
     }
 
-
-    fieldset {
+    fieldset, .container, body {
         align-self: center;
     }
-    legend {.logo-container {
-        display: flex;
-        color: white;
-        font-family: 'Norse Bold';
-        font-size: 6rem;
-        background-color: rgba(0, 0, 0, 0.5);
-        min-width: max(30vw,350px);
-        min-height: 175px;
-        position:absolute;
-        top: 18rem;
-        justify-content: center;
-        align-items: center;
-    
-    }
-        padding: 5;
-    }
-    .container {
-        flex-direction: column;
-        align-items: center;
-        margin-left: 25px;
-    }
+
     .image-container {
         display: none;
     }
@@ -202,10 +230,27 @@ input {
         margin: 50px;
         text-align: center;
         margin-top: 100px;
-        color: white;
     }
     .form-container{
         background-image: url(images/background-image.avif);
         background-size: cover;
+        width: 100vw;
+    }
+
+    input {
+        max-width: 200px;
+    }
+    .form {
+        flex-direction: column;
+    }
+    .form-col-1 {
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+    }
+    p{
+        color: white;
     }
 }
+
+

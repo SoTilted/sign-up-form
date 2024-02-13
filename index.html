@@ -16,42 +16,46 @@
             <p>This is not a real online service! You know you need something like this in your life to help you realise your deepest dreams. Sign up <em>now</em> to get started.</p>
             <p class="p2">You know you want to.</p>
         </div>
-
-    <form action="">
-  <fieldset>
-    <legend>Let's do this!</legend>
-  </fieldset>
-  <div class="container">
-  <div class="container1">
-  <p>
-    <label for="first-name">FIRST NAME</label>
-    <input type="text" id="name" name="username" required />
-  </p>
-  <p>
-    <label for="last-name">LAST NAME</label>
-    <input type="text" id="name" name="username" required />
-  </p>
-  <p>
-    <label for="mail">EMAIL</label>
-    <input type="email" id="mail" name="usermail" required />
-  </p>
-</div>
-<div class="container2">
-  <p>
-    <label for="phone">PHONE NUMBER</label>
-    <input type="tel" id="phone" name="phone" required />
-  </p>
-  <p>
-    <label for="pwd">PASSWORD</label>
-    <input type="password" id="pwd" name="password" required />
-  </p>
-  <p>
-    <label for="pwd">CONFIRM PASSWORD</label>
-    <input type="password" id="confirm-pwd" name="password" required />
-  </p>
-</div>
-</div>
-    </form>
-</div>
+  <form>
+    <div class="container">
+      <legend>Let's do this!</legend>
+      <div class="form">
+        <div class="form-col-1">
+          <div class="form-row">
+            <label for="first-name">FIRST NAME</label>
+            <input type="text" id="name" name="username" required />
+          </div>
+          <div class="form-row">
+            <label for="last-name">LAST NAME</label>
+            <input type="text" id="name" name="username" required />
+          </div>
+        </div>
+        <div class="form-col-1">
+          <div class="form-row">
+            <label for="mail">EMAIL</label>
+            <input type="email" id="mail" name="usermail" required />
+          </div>
+          <div class="form-row">
+            <label for="phone">PHONE NUMBER</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+        </div>
+        <div class="form-col-1">
+          <div class="form-row">
+            <label for="pwd">PASSWORD</label>
+            <input type="password" id="pwd" name="password" class="error" required />
+          </div>
+          <div class="form-row">
+            <label for="pwd">CONFIRM PASSWORD</label>
+            <input type="password" id="confirm-pwd" name="password" class="error" required />
+            <p class="error-text">*Passwords do not match</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit">Create Account</button>
+  </form>
+  <p>Already have an account? <a href="" id="Log-in">Log in</a></p>
 </body>
+<script src="main.js"></script>
 </html>
