@@ -251,15 +251,19 @@ button[type='submit']:hover {
         color: white;
     }
 }
-@media all and (max-height:989px) {
+@media (max-width:670px) and (max-height:989px) {
     .paragraph{
         display: none;
     }
-    form {
+    form {  
         overflow: scroll;
     }
     .container {
-        max-height: 70vh;
+        max-height: 80vh;
         overflow: scroll;
+        padding: 10px 40px 0px 40px;
+    }
+    .form-container {
+        justify-content: center;
     }
 }
