@@ -114,9 +114,7 @@ img {
 .form-container {
     flex-direction: column;
     align-items: center;
-    min-height: max(40vh,1025px);
     min-width:max(70vw,0px);/*thinking how to make it resize until breaking point*/
-    border: 2px solid black;
 }
 
 .form-container>.paragraph p{
@@ -183,7 +181,6 @@ input:focus {
     outline: none;
     border:solid 1px rgb(0, 128, 255);
     box-shadow:4px 4px 1px rgba(0, 0, 0, 0.1);
-
 }
 
 button[type='submit'] {
@@ -227,14 +224,16 @@ button[type='submit']:hover {
         display: none;
     }
     .form-container>.paragraph p{
-        margin: 50px;
+        font-size: 1rem;
         text-align: center;
-        margin-top: 100px;
+        margin-top: 0px;
     }
     .form-container{
+        width: 100vw;
         background-image: url(images/background-image.avif);
         background-size: cover;
-        width: 100vw;
+        background-repeat: no-repeat;
+        min-height: 100vh;
     }
 
     input {
@@ -252,5 +251,15 @@ button[type='submit']:hover {
         color: white;
     }
 }
-
-
+@media all and (max-height:989px) {
+    .paragraph{
+        display: none;
+    }
+    form {
+        overflow: scroll;
+    }
+    .container {
+        max-height: 70vh;
+        overflow: scroll;
+    }
+}
